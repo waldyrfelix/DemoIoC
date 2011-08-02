@@ -1,0 +1,22 @@
+﻿@model ICollection<DemoIoC.Domain.Entities.Product>
+@{
+    ViewBag.Title = "Produtos Ativos";
+}
+
+<h2>Frente de loja</h2>
+
+<div class="product-list">
+
+@foreach (var productItem in Model)
+{
+    <div class="product-item">
+        <h3>@productItem.Name</h3>
+        <p>
+            Qnt em estoque: @productItem.QuantityInStock
+            <br />
+            Preço: <span class="price">@productItem.Price.ToString("C")</span>
+        </p>
+    </div>    
+}
+<div class="clear"></div>
+</div>
